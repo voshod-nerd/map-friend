@@ -1,6 +1,6 @@
 <html lang="en"><head>
     <meta charset="utf-8">
-    <title>Bootstrap, from Twitter</title>
+    <title>Map Frande</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -19,12 +19,15 @@
     <script src="src/bootstrap/js/carousel.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="jquery/jquery-ui.js" language="javascript"></script>
+    <script src="src/add_advert.js"></script>
     <script src="src/script.js"></script>
     <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <!-- Le styles -->
     <link href="src/style.css" rel="stylesheet">
     <link href="src/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="src/bootstrap/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="src/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="src/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link href="jquery/jquery-ui.css" rel="stylesheet" type="text/css">
 	<link href="jquery/jquery-ui.theme.css" rel="stylesheet" type="text/css">
     
@@ -84,7 +87,7 @@
    
    <!--первый фрэйм -->
 <div class="row frame" id="frame1" style="display: none"   >
-
+<h2 class="row col-lg-offset-3 col-lg-6">Найди соседа</h2>
 
 	
 	<div class="col-lg-offset-3 col-lg-6" >
@@ -155,6 +158,7 @@
 
 <!--второй фрэйм -->
 <div class="row frame" id="frame2" style="display: none"  >
+<h2 class="row col-lg-offset-3 col-lg-6">Подай объявление</h2>
 	<div class="col-lg-offset-3 col-lg-6 " >
 	<div class="person">
 	<p>
@@ -185,10 +189,15 @@
 	<br>
 	<p>
 		<label for="amount">адрес</label>
-		<input class="input-medium" type="text" id="adres"size="20">
 		
-		<button type="button" class="btn btn-primary btn-sm" onclick="get_coordinates()">Ввод</button>
-	</p>
+		<div class="row">
+  <div class="col-xs-4 " >
+    <input type="text" class="form-control " id="adress"  input="validate_adress('#adress')" >
+  </div>
+  <button type="button" class="btn btn-primary  "  id="button_address" >Ввод</button>
+  </div>
+		
+			</p>
 	<br>
 	</p>
 	</div>

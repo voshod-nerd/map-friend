@@ -1,28 +1,42 @@
 var moscow_map,map2;
-$( document ).ready(function() {
+var myPlacemark;
+var town = "Москва ";
 
-  
-        
-        
+$( document ).ready(function() {
     ymaps.ready(function(){
         moscow_map = new ymaps.Map("map-karta", {
             center: [55.76, 37.64],
             zoom: 11
         });
-      moscow_map.geoObjects.add(new ymaps.Placemark([55.833436, 37.715175], {
-            balloonContent: '<strong>серобуромалиновый</strong> цвет'
-        }, {
-            preset: 'islands#dotIcon',
-            iconColor: '#735184'
-        }));
-        
+		
         map2 = new ymaps.Map("yandex_map", {
             center: [55.76, 37.64],
             zoom: 11
-        });
-      
-        
+        });       
+        $("#button_address").on("click",function(){get_coordinates("#adress",moscow_map)});
+
+        // Слушаем клик на карте
+    moscow_map.events.add('click', function (e) {
+        var coords = e.get('coords');
+
+        // Если метка уже создана – просто передвигаем ее
+        if (myPlacemark) {
+            myPlacemark.geometry.setCoordinates(coords);
+        }
+        // Если нет – создаем.
+        else {
+            myPlacemark = createPlacemark(coords);
+            moscow_map.geoObjects.add(myPlacemark);
+            // Слушаем событие окончания перетаскивания на метке.
+            myPlacemark.events.add('dragend', function () {
+                getAddress(myPlacemark.geometry.getCoordinates());
+            });
+        }
+        getAddress(coords);
     });
+
+ 
+   });
 
 
 $( "#slider-find" ).slider({
@@ -61,17 +75,13 @@ $(function() {
  });
 });
 
- function get_coordinates(){
- var t =$("#adres").val();
- var objects = ymaps.geoQuery(ymaps.geocode(t)).addToMap(moscow_map);
 
- }
- 
+
  function choice_frame(frame_id){
 	var qw = $(".frame");
 	qw.hide();
-	 $(frame_id).show();
-	
-	  
+	 $(frame_id).show();  
  }
+
+
 
