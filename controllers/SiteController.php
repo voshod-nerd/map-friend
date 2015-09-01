@@ -8,9 +8,14 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\LabelModel;
+use yii\helpers\BaseJson;
+use yii\helpers\Json;
 
 class SiteController extends Controller
 {
+
+ public $layout = 'logged';
     public function behaviors()
     {
         return [
@@ -32,6 +37,11 @@ class SiteController extends Controller
                 ],
             ],
         ];
+    }
+    
+    public function actionLabel(){
+	$var =  new LabelModel();
+    	 echo Json::encode($var->getLabelAddress());
     }
 
     public function actions()
@@ -67,7 +77,16 @@ class SiteController extends Controller
             ]);
         }
     }
+public function actionUnreported(){
+$this->layout = 'unreported';
+return $this->render('map');
+}
+	
+    public function actionMap(){
 
+	return $this->render('map');
+}
+   
     public function actionLogout()
     {
         Yii::$app->user->logout();
@@ -93,4 +112,10 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+	
+ public function actionSay($message = 'Hello')
+    {
+        return $this->render('say', ['message' => $message]);
+    }
 }
+

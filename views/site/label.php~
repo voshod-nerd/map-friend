@@ -1,0 +1,6 @@
+<?php
+foreach($model as $key){
+//echo "<li>".$key."</li><li>".$model[$key]."</li>";
+print_r($model);
+}
+?>

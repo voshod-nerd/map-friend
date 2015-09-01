@@ -23,31 +23,6 @@ AppAsset::register($this);
   
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-
- 
-  <?= Html::jsFile('@web/bootstrap/js/transition.js') ?>
-    <?= Html::jsFile('@web/bootstrap/js/alert.js') ?>
-    <?= Html::jsFile('@web/bootstrap/js/modal.js') ?>
-	<?= Html::jsFile('@web/bootstrap/js/dropdown.js') ?>
-    <?= Html::jsFile('@web/bootstrap/js/scrollspy.js') ?>
-	<?= Html::jsFile('@web/bootstrap/js/tab.js') ?>
-    <?= Html::jsFile('@web/bootstrap/js/tooltip.js') ?>
-    <?= Html::jsFile('@web/bootstrap/js/popover.js') ?>
-   <?= Html::jsFile('@web/bootstrap/js/button.js') ?>
-   <?= Html::jsFile('@web/bootstrap/js/collapse.js') ?>
-    <?= Html::jsFile('@web/bootstrap/js/carousel.js') ?>
-     <?= Html::jsFile('@web/jquery/jquery-ui.js') ?>
-    <?= Html::jsFile('@web/script.js') ?>
-  
-    
- 
-    <?= Html::cssFile('@web/style.css') ?>
-    <?= Html::cssFile('@web/bootstrap/css/bootstrap.css') ?>
-    <?= Html::cssFile('@web/bootstrap/css/bootstrap-theme.css') ?>
-    <?= Html::cssFile('@web/jquery/jquery-ui.css') ?>
-    <?= Html::cssFile('@web/jquery/jquery-ui.theme.css') ?>
-	
-  
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
@@ -69,10 +44,7 @@ AppAsset::register($this);
         
         <div class="navbar-collapse collapse">
         
-          <ul class="nav navbar-nav navbar-right">
-          
-          
-          
+          <ul class="nav navbar-nav navbar-right">  
          <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="dropdownMenu1">поиск по <b class="caret"></b></a>
                   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" role="menu">

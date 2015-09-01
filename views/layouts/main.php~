@@ -23,37 +23,7 @@ AppAsset::register($this);
   
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-<?php 
-/*
-$baseUrl = Yii::app()->baseUrl;
-$cs = Yii::app()->getClientScript();
 
-
-$cs->registerScriptFile($baseUrl.'/bootstrap/js/transition.js');
- $cs->registerScriptFile($baseUrl.'/bootstrap/js/alert.js');
-$cs->registerScriptFile($baseUrl.'/bootstrap/js/modal.js');
-$cs->registerScriptFile($baseUrl.'/bootstrap/js/dropdown.js');
-$cs->registerScriptFile($baseUrl.'/bootstrap/js/scrollspy.js');
-$cs->registerScriptFile($baseUrl.'/bootstrap/js/tab.js');
-$cs->registerScriptFile($baseUrl.'/bootstrap/js/tooltip.js');
-$cs->registerScriptFile($baseUrl.'/bootstrap/js/popover.js');
-
-
-
-$cs->registerScriptFile($baseUrl.'/bootstrap/js/button.js');
-$cs->registerScriptFile($baseUrl.'/bootstrap/js/collapse.js');
-$cs->registerScriptFile($baseUrl.'/bootstrap/js/carousel.js');
-$cs->registerScriptFile($baseUrl.'/jquery/jquery-ui.js');
-$cs->registerScriptFile($baseUrl.'/script.js');
-  
-    
- 
-    $cs->registerCssFile($baseUrl.'/style.css') ;
-    $cs->registerCssFile($baseUrl.'/bootstrap/css/bootstrap.css') ;
-    $cs->registerCssFile($baseUrl.'/bootstrap/css/bootstrap-theme.css');
-   $cs->registerCssFile($baseUrl.'/jquery/jquery-ui.css');
-    $cs->registerCssFile($baseUrl.'/jquery/jquery-ui.theme.css');*/ ?>
- 
   <?= Html::jsFile('@web/bootstrap/js/transition.js') ?>
     <?= Html::jsFile('@web/bootstrap/js/alert.js') ?>
     <?= Html::jsFile('@web/bootstrap/js/modal.js') ?>
@@ -66,17 +36,14 @@ $cs->registerScriptFile($baseUrl.'/script.js');
    <?= Html::jsFile('@web/bootstrap/js/collapse.js') ?>
     <?= Html::jsFile('@web/bootstrap/js/carousel.js') ?>
      <?= Html::jsFile('@web/jquery/jquery-ui.js') ?>
+<?= Html::jsFile('@web/add_advert.js') ?>
     <?= Html::jsFile('@web/script.js') ?>
-  
-    
- 
     <?= Html::cssFile('@web/style.css') ?>
     <?= Html::cssFile('@web/bootstrap/css/bootstrap.css') ?>
     <?= Html::cssFile('@web/bootstrap/css/bootstrap-theme.css') ?>
     <?= Html::cssFile('@web/jquery/jquery-ui.css') ?>
-    <?= Html::cssFile('@web/css/jquery/jquery-ui.theme.css') ?>
+    <?= Html::cssFile('@web/jquery/jquery-ui.theme.css') ?>
 	
-  
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
