@@ -20,7 +20,7 @@ AppAsset::register($this);
     <meta name="description" content="">
     <meta name="author" content="">
 
-  
+  <script type="text/javascript" src="https://api-maps.yandex.ru/1.1/?modules=regions~metro" charset="utf-8"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <?= Html::csrfMetaTags() ?>

@@ -75,13 +75,13 @@ body{
 	#information
 	{
 		
-		
-		height: 200px;
+		height: 100px;
 		border-width: 1px;
 		border-color:#e6e2e2 ;
 		border-radius: 4px;
 		border-style:groove;
 		margin: 2px;
+		padding:2px;
 	}
 	
 	
@@ -112,3 +112,14 @@ body{
 		height: 60px;
 		width: 60px;
 	}
+
+	#other_information{
+		overflow:auto;
+		height:200px;
+		cursor:pointer;
+	}
+	#metroList{
+		width:200px;
+		height:20px;	
+	}
+

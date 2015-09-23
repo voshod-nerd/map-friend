@@ -9,6 +9,8 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\LabelModel;
+use app\models\MetroModel;
+use app\models\PriceRangeModel;
 use yii\helpers\BaseJson;
 use yii\helpers\Json;
 
@@ -42,6 +44,15 @@ class SiteController extends Controller
     public function actionLabel(){
 	$var =  new LabelModel();
     	 echo Json::encode($var->getLabelAddress());
+    }
+
+    public function actionMetro(){
+	$var =  new MetroModel();
+	 echo Json::encode($var->getLabelAddress());
+    }
+    public function actionPricerange(){
+    	$var =  new PriceRangeModel();
+	 echo Json::encode($var->getPriceRange());
     }
 
     public function actions()

@@ -20,7 +20,7 @@ function get_coordinates(tag){
 		} 
  });
  }
-/*Определение адреса по координатам*/
+
     function getAddress(coords) {
         ymaps.geocode(coords).then(function (res) {
             var firstGeoObject = res.geoObjects.get(0);

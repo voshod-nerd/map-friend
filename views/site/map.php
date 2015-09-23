@@ -1,9 +1,6 @@
 <?php
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-
-
-
 $this->title = 'Map Frend';
 ?>
 
@@ -82,16 +79,7 @@ $this->title = 'Map Frend';
 	<div class="col-lg-offset-3 col-lg-6 " >
 	<div class="person">
 	<p>
-		<span>метро</span>
-		<div class="btn-group">
-			<button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-			метро <span class="caret"></span>
-			</button>
-			<ul class="dropdown-menu" role="menu">
-				<li><a href="#">какоето метро</a></li>
-				
-			</ul>
-		</div>
+		<label id="metro"></label>
 	</p>
 	<p>
 	<span>кого вы ищите</span>
@@ -124,27 +112,18 @@ $this->title = 'Map Frend';
 	<div class="person" id="map-karta" style="height:500px;"></div>
 </div>
 </div>
-
-
-
 <div  id="frame3" class="frame" >
 <h2 class="row col-lg-offset-3 col-lg-6">Найди соседа</h2>
 <div class="row">
 	<div class="col-lg-offset-1 col-lg-6">
-	
-		
-		
 		<div   id="yandex_map">
-		
 		</div>
 		
 	</div>
-	
 	<div class="col-lg-3 col-lg-offset-1 right"   >
 		<label>метро</label>
 	<br>
-		<input type="text">
-		
+		<select id="metroList"></select>
 	<p>
 	<div  id="slider-find"></div>
 	<label for="find-price">цена:</label>
@@ -157,15 +136,9 @@ $this->title = 'Map Frend';
 	<br>
 	
 	<div id="information">
-	<label> информация о выбраном объекте</label> 
-	<label>пока не ясно как будет выглядить</label>
 	</div>
-		<select id="other_information" size="2" class="form-control">
-			<option>выбор 1 ссылки</option>
-			<option selected="selected">выбор 2 ссылки </option>
-			<option>выбор 3 ссылки</option>
-		</select>
-		
+		<div id="other_information" class="form-control ">
+		</div>
 		<p>
 			<label for="radius">радиус поиска:</label>
 			<span   id="radius"  style="border:0;  font-weight:bold;"></span>

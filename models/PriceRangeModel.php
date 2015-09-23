@@ -4,7 +4,7 @@ namespace app\models;
 use yii\base\Model;
 use yii\db\Connection;
 
-class LabelModel extends Model
+class PriceRangeModel extends Model
 {
 	private $db ;
 	function __construct() {
@@ -15,9 +15,8 @@ class LabelModel extends Model
    	 		'charset' => 'utf8',
 		]);
 	}
-	public  function getLabelAddress(){
-		$data = \Yii::$app->request->get();
-		$posts = $this->db->createCommand('SELECT * FROM labalAddress INNER JOIN User ON labalAddress.idUsers = User.id WHERE price >='.$data['minPrice'].' AND price <='.$data['maxPrice'])->queryAll();
+	public  function getPriceRange(){
+		$posts = $this->db->createCommand('SELECT MIN( price ) AS min, MAX( price ) AS max FROM labalAddress ')->queryAll();
 		return $posts;
 	}
 }

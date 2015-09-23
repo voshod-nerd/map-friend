@@ -20,7 +20,7 @@ AppAsset::register($this);
     <meta name="description" content="">
     <meta name="author" content="">
 
-  
+  <script type="text/javascript" src="https://api-maps.yandex.ru/1.1/?modules=regions~metro" charset="utf-8"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 	
@@ -46,9 +46,6 @@ AppAsset::register($this);
         <div class="navbar-collapse collapse">
         
           <ul class="nav navbar-nav navbar-right">
-          
-          
-          
          <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="dropdownMenu1">поиск по <b class="caret"></b></a>
                   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" role="menu">

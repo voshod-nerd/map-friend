@@ -15,10 +15,6 @@ $( document ).ready(function() {
         });       
         $("#button_address").on("click",function(){get_coordinates("#adress")});
 
-
-	map2.events.add('click',function(){
-		get_label_for_map();
-	});
         // Слушаем клик на карте
     moscow_map.events.add('click', function (e) {
         var coords = e.get('coords');

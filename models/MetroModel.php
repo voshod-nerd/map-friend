@@ -4,7 +4,7 @@ namespace app\models;
 use yii\base\Model;
 use yii\db\Connection;
 
-class LabelModel extends Model
+class MetroModel extends Model
 {
 	private $db ;
 	function __construct() {
@@ -17,7 +17,7 @@ class LabelModel extends Model
 	}
 	public  function getLabelAddress(){
 		$data = \Yii::$app->request->get();
-		$posts = $this->db->createCommand('SELECT * FROM labalAddress INNER JOIN User ON labalAddress.idUsers = User.id WHERE price >='.$data['minPrice'].' AND price <='.$data['maxPrice'])->queryAll();
+		$posts = $this->db->createCommand('SELECT * FROM Metro WHERE Metro.idCity IN (SELECT id FROM City WHERE City.city LIKE '.$this->db->quoteValue($data['sity']).') ')->queryAll();
 		return $posts;
 	}
 }
